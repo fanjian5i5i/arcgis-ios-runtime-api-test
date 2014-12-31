@@ -14,6 +14,7 @@
 		B6391B821A544C9C00B2DB46 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6391B811A544C9C00B2DB46 /* Images.xcassets */; };
 		B6391B851A544C9C00B2DB46 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6391B831A544C9C00B2DB46 /* LaunchScreen.xib */; };
 		B6391B911A544C9C00B2DB46 /* arcgis_ios_runtime_api_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6391B901A544C9C00B2DB46 /* arcgis_ios_runtime_api_testTests.m */; };
+		B6391B9B1A54509D00B2DB46 /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B6391B9A1A54509D00B2DB46 /* ArcGIS.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		B6391B8A1A544C9C00B2DB46 /* arcgis-ios-runtime-api-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "arcgis-ios-runtime-api-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6391B8F1A544C9C00B2DB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6391B901A544C9C00B2DB46 /* arcgis_ios_runtime_api_testTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = arcgis_ios_runtime_api_testTests.m; sourceTree = "<group>"; };
+		B6391B9A1A54509D00B2DB46 /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = ../ArcGIS.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		B6391B741A544C9C00B2DB46 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B6391B9A1A54509D00B2DB46 /* ArcGIS.bundle */,
 				B6391B751A544C9C00B2DB46 /* Info.plist */,
 				B6391B761A544C9C00B2DB46 /* main.m */,
 			);
@@ -201,6 +204,7 @@
 			files = (
 				B6391B801A544C9C00B2DB46 /* Main.storyboard in Resources */,
 				B6391B851A544C9C00B2DB46 /* LaunchScreen.xib in Resources */,
+				B6391B9B1A54509D00B2DB46 /* ArcGIS.bundle in Resources */,
 				B6391B821A544C9C00B2DB46 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,8 +347,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/";
 				INFOPLIST_FILE = "arcgis-ios-runtime-api-test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-objC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -353,8 +365,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/iOS/";
 				INFOPLIST_FILE = "arcgis-ios-runtime-api-test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-objC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
